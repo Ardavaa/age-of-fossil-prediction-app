@@ -1,9 +1,8 @@
 import numpy as np
 import pickle as pkl
 import streamlit as st
-import plotly.express as px
 
-# Load the classifier and scalers
+# Load the regressor and scalers
 with open('.pkl/regressor.pkl', 'rb') as pickle_in:
     regressor = pkl.load(pickle_in)
 
@@ -74,6 +73,8 @@ def main():
 
         # display the prediction
         st.success(f"The predicted age of the fossil is {int(round(prediction[0]))} years.")
+    
+    st.info('Copyright © Ardava Barus - All rights reserved')
 
 if __name__ == '__main__':
     main()
